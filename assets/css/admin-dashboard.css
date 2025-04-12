@@ -1,0 +1,993 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #FEF3E8;
+}
+
+.sidebar {
+    width: 222px;
+    height: 100vh;
+    background: #B07154;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+}
+
+.logo {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo img {
+    width: 150px;
+    height: auto;
+    object-fit: contain;
+}
+
+.nav-group {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    text-decoration: none;
+    color: #B07154;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 22.4px;
+    background: #F4DECB;
+    height: 48px;
+    position: relative;
+    overflow: hidden;
+    transition: background-color 0.2s ease;
+}
+
+.nav-item:hover {
+    background: white;
+}
+
+.nav-item.active {
+    background: white;
+}
+
+.nav-item .icon {
+    width: 24px;
+    height: 24px;
+    margin-left: 41px;
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-item .text {
+    color: #B07154;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 22.4px;
+}
+
+.nav-item:last-child {
+    margin-top: auto;
+    margin-bottom: 20px;
+}
+
+.content {
+    margin-left: 222px;
+    background: #FEF3E8;
+    min-height: 100vh;
+}
+
+.logo-space {
+    height: 120px;
+    background: #B07154;
+}
+
+.nav-group {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.content h1 {
+    color: #B07154;
+    margin-bottom: 20px;
+}
+
+.nav-item {
+    transition: all 0.3s ease;
+}
+
+.nav-item:hover .icon svg *,
+.nav-item.active .icon svg * {
+    fill: #8B5B43;
+}
+
+/* Header Styles */
+.header {
+    background: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(176, 113, 84, 0.1);
+}
+
+/* Admin Profile Section */
+.admin-profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    /* Adjust spacing between elements */
+    position: relative;
+    /* Ensure proper positioning */
+    z-index: 1;
+    /* Ensure it appears above other elements */
+}
+
+.admin-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    /* Ensure proper positioning */
+}
+
+.admin-name {
+    color: #B07154;
+    /* Ensure the text color is visible */
+    font-size: 18px;
+    /* Adjust font size for better visibility */
+    font-weight: 600;
+    line-height: 22.40px;
+    word-wrap: break-word;
+    /* Ensure long names wrap properly */
+    position: relative;
+    /* Ensure proper positioning */
+    z-index: 1;
+    /* Ensure it appears above other elements */
+}
+
+.admin-role {
+    color: #8B5B43;
+    /* Secondary color for role */
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 18px;
+}
+
+.datetime-profile {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.datetime {
+    text-align: right;
+}
+
+.time {
+    color: #B07154;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 22.40px;
+}
+
+.date {
+    color: #B07154;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 18.20px;
+}
+
+.profile-icon {
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.profile-icon::after {
+    content: '';
+    position: absolute;
+    left: -10px;
+    height: 58px;
+    width: 2px;
+    background: #B07154;
+    transform: rotate(-90deg);
+}
+
+.main-content {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 333px 333px;
+    grid-template-rows: auto auto;
+    gap: 20px;
+}
+
+.stats-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    grid-column: 2;
+}
+
+.cards-column {
+    grid-column: 3;
+}
+
+.branch-card {
+    position: relative;
+}
+
+.admins-section {
+    position: absolute;
+    right: 373px;
+    /* 333px (width of branch-card) + 20px (gap) */
+    top: 509px;
+    /* Position it below the stats container */
+    z-index: 10;
+}
+
+.card,
+.branch-card,
+.admins-section {
+    background: #FFFFFF;
+    border-radius: 12px;
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    width: 333px;
+    height: fit-content;
+}
+
+.card {
+    margin-top: 0;
+}
+
+.card:hover {
+    box-shadow: 0 6px 12px rgba(176, 113, 84, 0.1);
+}
+
+.card-title {
+    color: #B07154;
+    font-size: 22px;
+    font-family: Montserrat;
+    font-weight: 500;
+    line-height: 30.80px;
+    margin-bottom: 36px;
+    transition: color 0.3s ease;
+    padding-left: 33px;
+}
+
+.card:hover .card-title {
+    color: #8B5B43;
+}
+
+.borrower-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    min-height: 300px;
+}
+
+.borrower-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    position: relative;
+}
+
+.borrower-icon {
+    width: 40px;
+    height: 40px;
+    margin-right: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.borrower-icon-img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+.borrower-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.borrower-name {
+    color: #B07154;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+
+.borrower-id {
+    color: #8B5B43;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.book-title {
+    color: #8B5B43;
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: 2px;
+}
+
+.action-icon {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.action-icon-img {
+    width: 24px;
+    height: 24px;
+}
+
+.no-borrowers-message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    font-size: 18px;
+    color: #B07154;
+    text-align: center;
+}
+
+.card-title {
+    color: #B07154;
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.book-title {
+    color: #8B5B43;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 16px;
+    display: block;
+    margin-top: 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 150px;
+}
+
+.borrower-item {
+    height: auto;
+    min-height: 50px;
+    padding: 10px 18px;
+}
+
+.borrower-info {
+    padding-right: 10px;
+    flex: 1;
+    overflow: hidden;
+}
+
+.borrower-name,
+.borrower-id {
+    color: #B07154;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 18.20px;
+    transition: color 0.3s ease;
+}
+
+.borrower-item:hover .borrower-name {
+    color: #8B5B43;
+    font-weight: 600;
+}
+
+.action-icon {
+    width: 24px;
+    height: 24px;
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+.action-icon svg rect {
+    transition: fill 0.3s ease;
+}
+
+.borrower-item:hover .action-icon {
+    transform: scale(1.1);
+}
+
+/* Branch Network Section */
+.branch-title {
+    color: #B07154;
+    font-family: Montserrat;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    text-align: center;
+    width: 100%;
+}
+
+.branch-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.branch-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 0;
+    background: #F4DECB;
+    border-radius: 8px;
+    position: relative;
+}
+
+.branch-icon {
+    width: 40px;
+    height: 40px;
+    margin-right: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.branch-icon-img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+.maximize-icon {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.maximize-icon:hover {
+    transform: translateY(-50%) scale(1.1);
+}
+
+.maximize-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.branch-info {
+    flex-grow: 1;
+}
+
+.branch-name {
+    color: #B07154;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 4px;
+}
+
+.branch-id {
+    color: #B07154;
+    font-family: Montserrat;
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+/* Total User Base statistics card */
+.stats-container {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.stats-card {
+    width: 333px;
+    height: 120px;
+    position: relative;
+    background: white;
+    overflow: hidden;
+    border-radius: 12px;
+    padding: 17px 20px;
+    box-shadow: 0 4px 6px rgba(176, 113, 84, 0.05);
+    transition: box-shadow 0.3s ease;
+}
+
+.stats-card:hover {
+    box-shadow: 0 6px 12px rgba(176, 113, 84, 0.1);
+}
+
+.stats-icon-container {
+    width: 80px;
+    height: 88px;
+    background: rgba(244, 222, 203, 0.48);
+    border-radius: 12px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.stats-icon {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+.stats-value {
+    position: absolute;
+    left: 148px;
+    top: 17px;
+    color: #B07154;
+    font-size: 49px;
+    font-family: Montserrat;
+    font-weight: 800;
+    line-height: 68.60px;
+}
+
+.stats-label {
+    position: absolute;
+    left: 147px;
+    top: 82px;
+    color: #B07154;
+    font-size: 16px;
+    font-family: Montserrat;
+    font-weight: 400;
+    line-height: 22.40px;
+}
+
+.admins-section {
+    grid-column: 2;
+    grid-row: 2;
+    background: #FFFFFF;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    width: 333px;
+    height: fit-content;
+    margin-top: 20px;
+}
+
+.admins-title {
+    color: #B07154;
+    font-family: Montserrat;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    text-align: center;
+    width: 100%;
+}
+
+.admin-card {
+    width: 100%;
+    height: 78px;
+    background: #F4DECB;
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+    outline: 1.50px solid #B07154;
+    margin-bottom: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    padding: 20px 40px;
+    /* Add padding to make space for the icons */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.admin-card:hover {
+    transform: translateX(5px);
+    box-shadow: 0 4px 8px rgba(176, 113, 84, 0.2);
+}
+
+.admin-action-icon {
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    right: 17px;
+    top: 20px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.admin-icon-img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+.admin-card:hover .admin-action-icon {
+    transform: scale(1.1);
+}
+
+.admin-content {
+    width: 289px;
+    height: 66px;
+    left: 6px;
+    top: 6px;
+    position: absolute;
+    background: rgba(244, 222, 203, 0.48);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: background-color 0.3s ease;
+}
+
+.admin-card:hover .admin-content {
+    background: rgba(244, 222, 203, 0.6);
+}
+
+.admin-action-icon-part {
+    position: absolute;
+    width: 10.93px;
+    height: 10.94px;
+    background: #B07154;
+}
+
+.admin-action-icon-tr {
+    left: 20.79px;
+    top: 3.28px;
+}
+
+.admin-action-icon-bl {
+    left: 3.28px;
+    top: 20.79px;
+}
+
+.admin-action-icon-tl {
+    width: 19.72px;
+    height: 19.69px;
+    left: 1.82px;
+    top: 1.82px;
+}
+
+.admin-action-icon-br {
+    width: 19.71px;
+    height: 19.68px;
+    left: 13.46px;
+    top: 13.50px;
+}
+
+.admin-name {
+    position: absolute;
+    left: 75px;
+    top: 12px;
+    color: #B07154;
+    font-size: 16px;
+    font-family: Montserrat;
+    font-weight: 600;
+    line-height: 22.40px;
+    word-wrap: break-word;
+}
+
+.admin-id {
+    position: absolute;
+    left: 75px;
+    top: 36px;
+    color: #B07154;
+    font-size: 13px;
+    font-family: Montserrat;
+    font-weight: 500;
+    line-height: 18.20px;
+    word-wrap: break-word;
+}
+
+.admin-status {
+    position: absolute;
+    left: 244px;
+    top: 48px;
+    color: #B07154;
+    font-size: 10px;
+    font-family: Montserrat;
+    font-weight: 500;
+    line-height: 14px;
+    word-wrap: break-word;
+}
+
+.admin-status-dot {
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    left: 230px;
+    top: 50px;
+    background: #B07154;
+    border-radius: 9999px;
+}
+
+.admin-divider {
+    width: 54px;
+    height: 0px;
+    position: absolute;
+    left: 65px;
+    top: 60px;
+    transform: rotate(-90deg);
+    transform-origin: top left;
+    outline: 1.50px solid #B07154;
+    outline-offset: -0.75px;
+}
+
+.admin-icon {
+    width: 42px;
+    height: 42px;
+    position: absolute;
+    left: 12px;
+    top: 14px;
+    overflow: hidden;
+}
+
+.admin-icon-inner {
+    width: 30.10px;
+    height: 34.98px;
+    position: absolute;
+    left: 5.97px;
+    top: 3.51px;
+    background: #B07154;
+}
+
+.borrower-icon-img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+.action-icon-img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+.cards-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.bottom-row {
+    display: flex;
+    gap: 20px;
+}
+
+.admins-section {
+    flex: 0 0 auto;
+}
+
+.branch-card {
+    flex: 1;
+}
+
+.admin-name {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    color: #8B5B43 !important;
+    /* Use a bright color to make it stand out */
+    z-index: 9999 !important;
+    /* Bring it to the front */
+    position: relative !important;
+    /* Ensure it's not hidden by absolute positioning */
+}
+
+.admin-name-1 {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    color: #8B5B43 !important;
+    /* Use a bright color to make it stand out */
+    z-index: 9999 !important;
+    /* Bring it to the front */
+    position: relative !important;
+    /* Ensure it's not hidden by absolute positioning */
+}
+
+.no-branches {
+    color: #B07154;
+    text-align: center;
+    padding: 20px;
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.input-field {
+    width: 267px;
+    padding: 12px 16px;
+    background: white;
+    border-radius: 12px;
+    border: 1px solid #B07154;
+    color: #727374;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 18.20px;
+    outline: none;
+    position: static;
+    text-align: center;
+    /* Add this to center the text */
+}
+
+.input-field::placeholder {
+    color: #727374;
+    text-align: center;
+    /* Add this to center the placeholder text */
+}
+
+/* When user starts typing, align text to left for better readability */
+.input-field:focus {
+    text-align: left;
+}
+
+/* When user types, keep the text left-aligned */
+.input-field:not(:placeholder-shown) {
+    text-align: left;
+}
+
+/* Left Icon */
+.admin-action-icon-left {
+    position: absolute;
+    left: 10px;
+    /* Adjust as needed */
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    /* Adjust container size if needed */
+    height: 35px;
+}
+
+.admin-action-icon-left img {
+    width: 24px;
+    /* Icon size */
+    height: 24px;
+    object-fit: contain;
+}
+
+/* Right Icon */
+.admin-action-icon-right {
+    position: absolute;
+    right: 10px;
+    /* Adjust as needed */
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    /* Adjust container size if needed */
+    height: 35px;
+}
+
+.admin-action-icon-right img {
+    width: 24px;
+    /* Icon size */
+    height: 24px;
+    object-fit: contain;
+}
+
+.borrower-list {
+    min-height: 300px;
+    /* Adjust this value to match your current size */
+}
+
+.no-borrowers-message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    /* Adjust as needed */
+    font-size: 18px;
+    color: #888;
+    text-align: center;
+}
+
+.overdue-status {
+    color: #ff4d4d;
+    font-weight: bold;
+    font-size: 12px;
+    display: block;
+    margin-top: 4px;
+}
+
+/* Clean Borrower Item Styling to match screenshot */
+.borrower-item-clean {
+    display: flex;
+    align-items: flex-start;
+    padding: 15px 0;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.borrower-icon-clean {
+    margin-right: 10px;
+}
+
+.borrower-icon-clean img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+.borrower-info-clean {
+    color: #B07154;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+.book-title-clean {
+    color: #8B5B43;
+    font-size: 12px;
+    margin-top: 2px;
+}
+
+.action-icon-clean {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.action-icon-clean img {
+    width: 24px;
+    height: 24px;
+}
+
+.card-title {
+    color: #B07154;
+    font-size: 22px;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 20px;
+    padding-left: 0;
+}
+
+.borrower-list {
+    padding: 0 20px;
+}
+
+.no-borrowers-message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    font-size: 16px;
+    color: #B07154;
+    text-align: center;
+}
